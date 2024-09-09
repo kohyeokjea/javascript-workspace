@@ -15,12 +15,11 @@ const user = {
 // console.log(newUser);
 // console.log(user.address.city === newUser.address.city); //true
 
-const newUser = {...user}
-
+const newUser = { ...user }
 console.log(user === newUser);
 
 newUser.name = "김이남";
-newUser.address.city="서울"
+newUser.address.city = "서울"
 
 console.log(user);
 console.log(newUser);
