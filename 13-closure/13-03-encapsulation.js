@@ -12,7 +12,7 @@ function Counter() {
 
 const counter = new Counter()
 // console.log(counter);
-// console.log(counter.counter); //undefined
+// console.log(counter.counter); //undefinedww
 
 console.log(counter.increase());
 console.log(counter.increase());
