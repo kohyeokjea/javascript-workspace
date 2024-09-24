@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<body>
+    <div id="content"></div>
+    <script>
+        const API_URL = "http://localhost:3000/todos";
+
+        async function fetchTodos() {
+            const response = await fetch(API_URL);
+            const data = await response.json
+            renderTable(data);
+        }
+
+        function renderTable(data) {
+            let tableHtml = `
+            <table>
+                <thead>
+                    <th>ID</th>
+                    <th>Content</th>
+                    <th>Completed</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    
+            `;
+
+            data.forEach((item)=>{
+                tableHtml +=`
+                        <tr>
+                            <td>${item.id}</td>
+                            <td>${item.content}</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                `;
+                document.querySelector("#content") = tableHtml;
+            })
+        }
+        fetchTodos();
+
+    </script>
+</body>
+
+</html>
